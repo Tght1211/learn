@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form空白</title>
+<script type="text/javascript" src="../../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//输入用户名后，验证用户名是否存在(zhangsan)
+		$("#username").change(function(){
+			var uname = $(this).val();
+			if("zhangsan" == uname){
+				//用户名已存在，请重新输入
+// 				alert("用户名已存在，请重新输入");
+				$("#unameMsg").text("用户名已存在，请重新输入").css("color","red");
+			}else{
+				//用户名可用
+// 				alert("用户名可用");
+				$("#unameMsg").text("用户名可用").css("color","green");
+			}
+			
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<h1>注册</h1>
+	<form action="regist_success.html">
+		用户名:<input type="text" name="username" id="username">
+		<span id="unameMsg"></span>
+		<br>
+		密&emsp;码:<input type="password" name="pwd"><br>
+		<input type="reset">
+		<input type="submit" value="注册">
+	</form>
+	<a href="../index.html">回首页</a>
+</body>
+</html>
